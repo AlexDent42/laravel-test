@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/user/{id}/{name}', function($id, $name)
+{
+	return $id.'Its name'.$name;
+})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+
+Route::get('/pages/show/{id}', 'PageController@showOne')->where('id','[0-9]+');
+
+route::get('/pages/all', 'PageController@showAll');
+
