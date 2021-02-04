@@ -37,5 +37,14 @@ Route::get('/post/{id}', 'PostController@showOne')->name('one-post');
 
 Route::get('/posts', 'PostController@showAll')->name('all-posts');
 
+Route::get('/product/{category_id}/{product_id}', 'ProductController@showProduct');
+
+Route::get('/product/{category_id}', 'ProductController@showCategory');
+
+
+Route::get('/test-action', 'TestController@testAction');
+
+Route::get('/response', 'ResponseController@show');
+
 
 

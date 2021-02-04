@@ -62,4 +62,26 @@ protected $categories = [];
 		],
 	];
     }
+
+
+    public function showProduct($category_id, $product_id)
+    {
+    	$category = $this-> categories[$category_id];
+    	$product = $category['products'][$product_id];
+
+
+    	 return view('/products', $product);
+    }
+
+    public function showCategory($category_id)
+    {
+    	$category = $this-> categories[$category_id];
+    	// dd($category);
+
+    	return view('/products')->with($category);
+    }
+
+
+
+
 }

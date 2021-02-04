@@ -1,0 +1,1 @@
+response.blade.php

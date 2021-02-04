@@ -61,4 +61,13 @@ class TestController extends Controller
 
     	return view('test.learn-blade', ['result' => $result]);
     }
+
+    public function testAction(Request $request)
+    {
+      $request->session()->flash('kdfdfey', 'value');
+      dd($request);
+
+    }
+     
 }
+
