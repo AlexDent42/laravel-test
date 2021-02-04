@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@month');
+
+Route::get('/blade/{id}', 'TestController@learnBlade');
 
 Route::get('/user/{id}/{name}', function($id, $name)
 {
@@ -24,5 +24,18 @@ Route::get('/user/{id}/{name}', function($id, $name)
 
 Route::get('/pages/show/{id}', 'PageController@showOne')->where('id','[0-9]+');
 
-route::get('/pages/all', 'PageController@showAll');
+Route::get('/pages/all', 'PageController@showAll');
+
+Route::get('/test/sum/{num1}/{num2}/', 'TestController@sum')->where(['num1'=>'[0-9]+', 'num2'=>'[0-9]+']);
+
+
+
+
+Route::get('/location/{city}/{country}', 'TestController@location');
+
+Route::get('/post/{id}', 'PostController@showOne')->name('one-post');
+
+Route::get('/posts', 'PostController@showAll')->name('all-posts');
+
+
 
